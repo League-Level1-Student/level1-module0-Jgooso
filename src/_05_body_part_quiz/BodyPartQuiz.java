@@ -28,10 +28,12 @@ public class BodyPartQuiz {
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
-
+	int score = 0;
 	public void run() {
 		initializeGui();
 		startQuiz();
+		
+		
 	}
 
 	private void initializeGui() {
@@ -51,7 +53,7 @@ public class BodyPartQuiz {
 		
 		String answer = "";
 		// 1. Make an int variable to hold the score.
-			int score = 0;
+			
 		// 2. Set the size of the window in the initializeGui() method 
 			for(int i = 0; i < 4; i++) {
 		// 4. Ask the user who this person is and store their answer
@@ -64,7 +66,7 @@ public class BodyPartQuiz {
 		}else if(i == 1) {
 			answer = "Leonardo DiCaprio";
 		}else if(i == 2) {
-			answer = "Morgan Freman";
+			answer = "Morgan Freeman";
 		}else if(i == 3) {
 			answer = "Jack Black";
 		}
@@ -76,15 +78,21 @@ public class BodyPartQuiz {
 		}
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
-
+		if(i == 3) {
+			JOptionPane.showConfirmDialog(null, "Score: "+ score);
+		}
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
-			
+		
 		// 8. .... repeat 4-7 for all your images.....
+		
 			}
+			
+
 		// 9. Show them their current score
-			//Doesn't show Score
-			JOptionPane.showConfirmDialog(null,"Score: " +  score);
+		
+			
+			
 	}
 	
 	public void showNextImage() {
@@ -118,5 +126,6 @@ public class BodyPartQuiz {
 			return imageIterator.next();
 		System.exit(0);
 		return new JLabel();
+		
 	}
 }
