@@ -11,6 +11,7 @@ public void run() {
 	frame.add(panel);
 	frame.addKeyListener(this);
 	frame.setVisible(true);
+	
 }
 
 @Override
